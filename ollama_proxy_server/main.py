@@ -81,10 +81,9 @@ def main():
             try:
                 for chunk in response.iter_content(chunk_size=1024):
                     if chunk:
-                        print("1111",len(chunk))
-                        self.wfile.write(b"%s" % (chunk))
+                        self.wfile.write(b"%X\r\n%s\r\n" % (len(chunk), chunk))
                         self.wfile.flush()
-                #self.wfile.write(b"\r\n\r\n")
+                self.wfile.write(b"0\r\n\r\n")
             except BrokenPipeError:
                 pass
 
