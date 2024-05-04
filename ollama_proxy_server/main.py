@@ -83,7 +83,7 @@ def main():
                     if chunk:
                         self.wfile.write(b"\r\n%s\r\n" % (chunk))
                         self.wfile.flush()
-                self.wfile.write(b"0\r\n\r\n")
+                self.wfile.write(b"\r\n\r\n")
             except BrokenPipeError:
                 pass
 
