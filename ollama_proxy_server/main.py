@@ -75,7 +75,7 @@ def main():
             for key, value in response.headers.items():
                 if key.lower() not in ['content-length', 'transfer-encoding', 'content-encoding']:
                     self.send_header(key, value)
-            self.send_header('Transfer-Encoding', 'chunked')
+            #self.send_header('Transfer-Encoding', 'chunked')
             self.end_headers()
 
             try:
